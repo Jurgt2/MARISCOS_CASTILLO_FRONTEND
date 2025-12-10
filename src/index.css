@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-castillo bg-base-100;
+  }
+}
+
+@layer components {
+  .btn-castillo {
+    @apply btn btn-primary text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .card-castillo {
+    @apply card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100;
+  }
+  
+  .table-card {
+    @apply cursor-pointer transform hover:scale-105 transition-all duration-300 active:scale-95;
+  }
+  
+  .product-card {
+    @apply cursor-pointer hover:ring-2 hover:ring-primary transition-all duration-200;
+  }
+  
+  .ocean-gradient {
+    @apply bg-gradient-to-br from-castillo-blue via-castillo-ocean to-castillo-wave;
+  }
+  
+  .coral-gradient {
+    @apply bg-gradient-to-r from-castillo-coral to-orange-600;
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-wave {
+  animation: wave 3s ease-in-out infinite;
+}
+
+/* Estilos para impresión de tickets */
+@media print {
+  @page {
+    size: 80mm auto;
+    margin: 0;
+  }
+  
+  body {
+    width: 80mm;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-castillo-ocean;
+}
